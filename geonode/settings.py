@@ -2325,3 +2325,9 @@ FACET_PROVIDERS = (
     "geonode.facets.providers.thesaurus.ThesaurusFacetProvider",
     "geonode.facets.providers.region.RegionFacetProvider",
 )
+
+# This will assign layer to existing default geoserver style if there is
+# no SLD provided to avoid proliferation of styles in the system
+USE_DEFAULT_GEOSERVER_STYLE = ast.literal_eval(
+    os.environ.get('USE_DEFAULT_GEOSERVER_STYLE', 'False')
+)
